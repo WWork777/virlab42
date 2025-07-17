@@ -1,0 +1,162 @@
+.modal-content {
+	background-color: #ffffff;
+	padding: 20px;
+	// box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+	border: none;
+	color: var(--font);
+	// border-radius: 0px !important;
+}
+
+.modal-header {
+	border-bottom: none;
+
+	.btn-close {
+		color: #333 !important;
+		background-color: transparent;
+		border: none;
+		position: relative;
+
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 1.2rem;
+			height: 2px;
+			background-color: #333;
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+
+		&:after {
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+	}
+}
+
+.modal-body {
+	padding-top: 0px;
+	.modal-button:hover {
+		background-color: var(--accent_color);
+		color: white !important;
+	}
+	h5 {
+		text-align: center;
+		color: #333;
+		font-size: 20px;
+		font-weight: 700;
+		margin-bottom: 20px;
+		margin-top: 0px !important;
+	}
+	.group {
+		position: relative;
+		margin-bottom: 45px;
+	}
+	.color {
+		color: var(--accent_color);
+	}
+	input {
+		font-size: 18px;
+		padding: 10px 10px 10px 5px;
+		display: block;
+		width: 100%;
+		border: none;
+		border-bottom: 1px solid #757575;
+		background-color: #ffffff;
+	}
+	input:focus {
+		outline: none;
+		border: none;
+	}
+
+	label {
+		color: #999;
+		font-size: 18px;
+		font-weight: normal;
+		position: absolute;
+		pointer-events: none;
+		left: 5px;
+		top: 10px;
+		transition: 0.2s ease all;
+		-moz-transition: 0.2s ease all;
+		-webkit-transition: 0.2s ease all;
+	}
+
+	/* active state */
+	input:focus ~ label,
+	input:valid ~ label {
+		top: -20px;
+		font-size: 14px;
+		color: var(--font);
+	}
+	.bar {
+		position: relative;
+		display: block;
+		width: 100%;
+	}
+	.bar:before,
+	.bar:after {
+		content: '';
+		height: 1px;
+		width: 0;
+		bottom: 1px;
+		position: absolute;
+		background: var(--accent_color);
+		transition: 0.2s ease all;
+		-moz-transition: 0.2s ease all;
+		-webkit-transition: 0.2s ease all;
+	}
+	.bar:before {
+		left: 50%;
+	}
+	.bar:after {
+		right: 50%;
+	}
+
+	/* active state */
+	input:focus ~ .bar:before,
+	input:focus ~ .bar:after {
+		width: 50%;
+	}
+	.highlight {
+		position: absolute;
+		height: 60%;
+		width: 100px;
+		top: 25%;
+		left: 0;
+		pointer-events: none;
+		opacity: 0.5;
+	}
+	input:focus ~ .highlight {
+		-webkit-animation: inputHighlighter 0.3s ease;
+		-moz-animation: inputHighlighter 0.3s ease;
+		animation: inputHighlighter 0.3s ease;
+	}
+	@-webkit-keyframes inputHighlighter {
+		from {
+			background: #5264ae;
+		}
+		to {
+			width: 0;
+			background: transparent;
+		}
+	}
+	@-moz-keyframes inputHighlighter {
+		from {
+			background: #5264ae;
+		}
+		to {
+			width: 0;
+			background: transparent;
+		}
+	}
+	@keyframes inputHighlighter {
+		from {
+			background: #5264ae;
+		}
+		to {
+			width: 0;
+			background: transparent;
+		}
+	}
+}

@@ -1,0 +1,3 @@
+User-Agent: *
+Allow: /
+Sitemap: https://virlab42.ru/sitemap.xml

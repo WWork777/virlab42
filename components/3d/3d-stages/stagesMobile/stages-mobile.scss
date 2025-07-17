@@ -1,0 +1,54 @@
+.scroll {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.stages-mobile {
+	position: relative;
+	flex-direction: row;
+	background: var(--grey-blue-dark);
+	color: white;
+
+	.desktop-content-img {
+		background: url('../stagesDesktop/img/карбон3.jpg');
+		background-position: center;
+		background-size: cover;
+		width: 50%;
+		height: 100%;
+
+		.desktop-content-overlay {
+			height: inherit;
+			background-color: #181f24f5 !important;
+		}
+	}
+}
+.desktop-content {
+	display: flex;
+	flex-direction: column;
+	padding: 80px 0 80px 25px;
+	h2 {
+		position: relative;
+		font-size: 32px;
+		padding-left: 10px;
+		margin-left: 0;
+		margin-bottom: 20px;
+	}
+	h2:after {
+		content: '';
+		position: absolute;
+		width: 1px;
+		height: 40px;
+		left: -5px;
+		top: -20px;
+		background-color: var(--accent_color);
+	}
+	h2:before {
+		content: '';
+		position: absolute;
+		width: 90px;
+		height: 1px;
+		left: -20px;
+		top: -10px;
+		background-color: var(--accent_color);
+	}
+}

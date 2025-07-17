@@ -1,0 +1,147 @@
+.slider {
+	display: flex;
+	justify-content: center; /* Центрирование слайдера на экране */
+	padding: 20px; /* Отступы слайдера для десктопа */
+	gap: 30px;
+}
+
+.service-block {
+	width: 20%;
+	height: 150px;
+	border-radius: 0px;
+	background-color: #181f24f5;
+
+	h1 {
+		font-size: 26px;
+		font-weight: bold;
+		margin: 0;
+		text-align: left;
+		margin-left: 20px;
+		font-weight: 900;
+		font-style: normal;
+		color: #968c76;
+		font-family: var(--font-cormorant), system-ui;
+	}
+	.description {
+		font-size: 18px;
+		line-height: 1.6;
+		margin: 10px 0;
+	}
+	.price {
+		font-size: 22px;
+		font-weight: bold;
+		color: #ffffff;
+		text-align: left;
+		margin: 0;
+		background-color: bisque;
+		width: 40%;
+		text-align: center;
+		border-radius: 15px;
+	}
+}
+
+.title {
+	text-align: center;
+	font-size: 3.75rem;
+	flex: 0 1 auto;
+	position: relative;
+	font-weight: 700;
+	font-style: normal;
+	font-family: var(--font-cormorant), system-ui;
+	color: #968c76;
+}
+
+.service-content {
+	padding-top: 30px;
+	padding-bottom: 70px;
+	text-align: center; /* Выравнивание текста */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	border-radius: 20px;
+}
+
+.price-button {
+	background-color: #968c76; /* цвет фона кнопки */
+	color: white; /* цвет текста кнопки */
+	border: none;
+	border-radius: 0px;
+	padding: 10px 15px;
+	cursor: pointer;
+	transition: background-color 0.3s ease; /* анимация перехода */
+	border-radius: 0px;
+	width: 80%;
+	text-align: center;
+	margin: 0 auto;
+	/* margin-left: 20px;
+	margin-right: 0px; */
+}
+
+.price-button:hover {
+	background-color: #1f272b; /* цвет фона кнопки при наведении */
+}
+
+/* Медиа-запросы для десктопной версии */
+@media (max-width: 1280px) {
+	.slider {
+		display: flex;
+		overflow-x: scroll;
+		scroll-snap-type: x mandatory;
+		justify-content: center; /* Центрирование слайдера на экране */
+		padding: 20px; /* Отступы слайдера для десктопа */
+		gap: 30px;
+	}
+
+	.slider {
+		justify-content: space-around;
+		padding: 16px;
+	}
+	.price-button {
+		width: 100%;
+		margin-left: 0;
+	}
+	.service-block {
+		width: 1000px !important;
+	}
+	.service-content {
+		width: 60vw;
+	}
+	.price-button {
+		width: 50%;
+		margin-left: 10px;
+	}
+}
+
+@media (max-width: 768px) {
+	.slider {
+		justify-content: space-around;
+		padding: 12px;
+	}
+	.price-button {
+		width: 100%;
+		margin-left: 0;
+	}
+	.service-block {
+		width: 1000px !important;
+	}
+	.service-content {
+		width: 70vw;
+	}
+	.price-button {
+		width: 50%;
+		margin-left: 10px;
+	}
+}
+
+@media (max-width: 400px) {
+	.service-block {
+		h1 {
+			font-size: 16px;
+			margin-left: 10px;
+		}
+		.price-button {
+			width: fit-content;
+		}
+	}
+}

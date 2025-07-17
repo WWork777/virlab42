@@ -1,0 +1,27 @@
+.top_price {
+	color: #1aba5e; /* Устанавливаем цвет текста */
+}
+.pricing {
+	padding: 60px 0 0;
+}
+.header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.title {
+	font-size: 30px;
+	padding-bottom: 10px;
+}
+.subtitle {
+	font-size: 20px;
+}
+.divider {
+	width: 33.333%;
+	height: 1px;
+	background-color: var(--accent_color);
+}
+.logo {
+	font-size: 33px;
+	color: var(--accent_color);
+}
