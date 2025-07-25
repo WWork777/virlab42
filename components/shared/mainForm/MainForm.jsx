@@ -208,6 +208,7 @@ function MainForm() {
 								value={formData.name}
 								onChange={handleChange}
 								required
+								placeholder=' '
 							/>
 							<span className='bar'></span>
 							<label>Имя</label>
@@ -218,7 +219,8 @@ function MainForm() {
 								name='email'
 								value={formData.email}
 								onChange={handleChange}
-								required
+								placeholder=' '
+								// required
 							/>
 							<span className='bar'></span>
 							<label>Email</label>
@@ -231,6 +233,7 @@ function MainForm() {
 								value={formData.phone}
 								onChange={handleChange}
 								required
+								placeholder=' '
 							/>
 							<span className='bar'></span>
 							<label>Номер телефона</label>

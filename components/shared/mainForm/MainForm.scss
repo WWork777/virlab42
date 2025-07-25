@@ -103,7 +103,7 @@
 
 		/* active state */
 		input:focus ~ label,
-		input:valid ~ label {
+		input:not(:placeholder-shown) ~ label {
 			top: -20px;
 			font-size: 14px;
 			color: var(--main_color);

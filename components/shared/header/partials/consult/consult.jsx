@@ -137,6 +137,7 @@ const Consult = ({ size, text }) => {
 												value={formData.name}
 												onChange={handleChange}
 												required
+												placeholder=' '
 											/>
 											<span className='bar'></span>
 											<label>Имя</label>
@@ -148,6 +149,7 @@ const Consult = ({ size, text }) => {
 												value={formData.phone}
 												onChange={handleChange}
 												required
+												placeholder=' '
 											/>
 											<span className='bar'></span>
 											<label>Номер телефона</label>
@@ -163,7 +165,8 @@ const Consult = ({ size, text }) => {
 												name='email'
 												value={formData.email}
 												onChange={handleChange}
-												required
+												// required
+												placeholder=' '
 											/>
 											<span className='bar'></span>
 											<label>Email</label>
