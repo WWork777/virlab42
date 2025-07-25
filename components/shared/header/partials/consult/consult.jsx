@@ -41,6 +41,7 @@ const Consult = ({ size, text }) => {
 		}))
 	}
 	const validateEmail = email => {
+		if (email.trim() === '') return true
 		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 		return emailRegex.test(email)
 	}
