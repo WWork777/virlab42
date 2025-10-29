@@ -34,7 +34,7 @@ function Contacts() {
 
 				<div className='body-contacts'>
 					<div className='left-body-contacts'>
-						<a href='https://t.me/nev_3d' className='contacts-square'>
+						<a href='https://t.me/Pavelvrl' className='contacts-square'>
 							<svg
 								width='1000px'
 								height='1000px'
@@ -65,7 +65,7 @@ function Contacts() {
 								</g>
 							</svg>
 						</a>
-						<a href='https://wa.me/89505940280' className='contacts-square'>
+						<a href='https://wa.me/79994316266' className='contacts-square'>
 						<svg 
 							className="whatsapp"
 							fill="#968c76" 
@@ -99,7 +99,7 @@ function Contacts() {
 						<div className='right-body-contacts-content'>
 							<div>
 								<h4>ТЕЛЕФОН</h4>
-								<a href='tel:89505940280'>
+								<a href='tel:79994316266'>
 									<p>
 										<span className='color'>
 											<svg
@@ -115,7 +115,7 @@ function Contacts() {
 													d='M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z'
 												/>
 											</svg>
-											+7 (950) 594-02-80
+											+7 (999) 431-62-66
 										</span>
 									</p>
 								</a>
@@ -152,7 +152,7 @@ function Contacts() {
 							</div>
 							<div>
 								<h4>ПОЧТА</h4>
-								<a href='mailto:virlab42@mail.ru'>
+								<a href='mailto:pavel-sakne@yandex.ru'>
 									<p>
 										<span className='color'>
 											<svg
@@ -176,7 +176,7 @@ function Contacts() {
 													></path>{' '}
 												</g>
 											</svg>
-											virlab42@mail.ru
+											pavel-sakne@yandex.ru
 										</span>
 									</p>
 								</a>

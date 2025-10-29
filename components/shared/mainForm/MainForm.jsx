@@ -118,14 +118,14 @@ function MainForm() {
 						<h1>Ответим на все ваши <br /> вопросы по телефону:</h1>
 					</div>
 					<div className='mainform-img-text'>
-						<a href='tel:89505940280'>+7 (950) 594-02-80</a>
+						<a href='tel:79994316266'>+7 (999) 431-62-66</a>
 						<h1>Отдел 3D-печати:</h1>
-						<a href='tel:89505940280'>+7 (950) 594-02-80</a>
+						<a href='tel:79994316266'>+7 (999) 431-62-66</a>
 						<h1>Электронная почта:</h1>
-						<a href='mailto:virlab42@mail.ru'>virlab42@mail.ru</a>
+						<a href='mailto:pavel-sakne@yandex.ru'>pavel-sakne@yandex.ru</a>
 						<div className='socials'>
 							<Link
-								href='https://t.me/nev_3d'
+								href='https://t.me/Pavelvrl'
 								onClick={() => window.scrollTo(0, 0)}
 								className='nav-connection'
 							>
@@ -161,7 +161,7 @@ function MainForm() {
 								</svg>
 							</Link>
 							<Link
-								href='https://wa.me/89505940280'
+								href='https://wa.me/79994316266'
 								onClick={() => window.scrollTo(0, 0)}
 								className='nav-connection'
 							>

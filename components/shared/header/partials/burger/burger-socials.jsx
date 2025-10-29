@@ -2,7 +2,7 @@ const BurgerSocials = () => {
 	return (
 		<ul className='flex gap-3 justify-start'>
 			<li>
-				<a href='https://t.me/nev_3d'>
+				<a href='https://t.me/Pavelvrl'>
 					<svg
 						className='tg'
 						width='25px'
@@ -36,7 +36,7 @@ const BurgerSocials = () => {
 				</a>
 			</li>
 			<li>
-				<a href='https://wa.me/89505940280'>
+				<a href='https://wa.me/79994316266'>
 				<svg 
 					className="whatsapp"
 					fill="#968c76" 

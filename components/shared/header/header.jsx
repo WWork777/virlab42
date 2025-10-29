@@ -17,17 +17,17 @@ const Header = () => {
           <div className="header__nav-top flex items-center gap-3">
             <Link
               className="text-accent_color flex items-center gap-1 text-[14px]"
-              href={"tel:89505940280"}
+              href={"tel:79994316266"}
             >
               <Phone size={18} color="#968c76" />
-              +7 (950) 594-02-80
+              +7 (999) 431-62-66
             </Link>
             <Link
               className="text-accent_color flex items-center gap-1 text-[14px]"
-              href={"mailto:virlab42@mail.ru"}
+              href={"mailto:pavel-sakne@yandex.ru"}
             >
               <Mail color="#968c76" size={18} />
-              virlab42@mail.ru
+              pavel-sakne@yandex.ru
             </Link>
             <Link
               className="text-accent_color flex items-center gap-1 text-[14px]"

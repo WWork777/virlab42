@@ -40,19 +40,19 @@ export function Burger() {
             <SheetClose asChild>
               <a
                 className="text-accent_color flex items-center gap-2  text-[12px] sm:text-[14px]"
-                href="tel:89505940280"
+                href="tel:79994316266"
               >
                 <Phone size={25} color="#968c76" strokeWidth={1.5} />
-                +7 (950) 954-02-80
+                +7 (999) 431-62-66
               </a>
             </SheetClose>
             <SheetClose asChild>
               <a
                 className="text-accent_color flex items-center gap-2  text-[12px] sm:text-[14px]"
-                href="mailto:virlab42@mail.ru"
+                href="mailto:pavel-sakne@yandex.ru"
               >
                 <Mail size={25} color="#968c76" strokeWidth={1.5} />
-                virlab42@mail.ru
+                pavel-sakne@yandex.ru
               </a>
             </SheetClose>
             <SheetClose asChild>

@@ -56,7 +56,7 @@ function Footer() {
 						<div className='nav-container'>
 							<div className='nav-block'>
 								<Link
-									href='https://t.me/nev_3d'
+									href='https://t.me/Pavelvrl'
 									onClick={() => window.scrollTo(0, 0)}
 									className='nav-connection'
 								>
@@ -91,7 +91,7 @@ function Footer() {
 									</svg>
 								</Link>
 								<Link
-									href='https://wa.me/89505940280'
+									href='https://wa.me/79994316266'
 									onClick={() => window.scrollTo(0, 0)}
 									className='nav-connection'
 								>
@@ -134,8 +134,9 @@ function Footer() {
 								</Link>
 							</div>
 							<div className='mail-tel'>
-								<a href='mailto:virlab42@mail.ru'>virlab42@mail.ru</a>
-								<a href='tel:89505940280'> +7 (950) 594-02-80</a>
+								<a href='mailto:pavel-sakne@yandex.ru'>pavel-sakne@yandex.ru</a>
+								<a href='tel:79994316266'><span style={{color:"white"}}>По вопросам:</span> +7 (999) 431-62-66</a>
+								<a href='tel:79505940280'><span style={{color:"white"}}>3д Печать:</span> +7 (950) 594-02-80</a>
 							</div>
 						</div>
 					</div>
@@ -195,7 +196,7 @@ function Footer() {
 							<div className='nav-block nav-block-connection'>
 								<div className='flex gap-3'>
 									<Link
-										href='https://t.me/nev_3d'
+										href='https://t.me/Pavelvrl'
 										onClick={() => window.scrollTo(0, 0)}
 										className='nav-connection'
 									>
@@ -230,7 +231,7 @@ function Footer() {
 										</svg>
 									</Link>
 									<Link
-										href='https://wa.me/89505940280'
+										href='https://wa.me/79994316266'
 										onClick={() => window.scrollTo(0, 0)}
 										className='nav-connection'
 									>
@@ -266,12 +267,12 @@ function Footer() {
 										</svg>
 									</Link>
 								</div>
-								<a className='nav-connection' href='mail:virlab42@mail.ru'>
-									virlab42@mail.ru
+								<a className='nav-connection' href='mail:pavel-sakne@yandex.ru'>
+									pavel-sakne@yandex.ru
 								</a>
-								<a className='nav-connection' href='tel:89505940280'>
-									+7 (950) 594-02-80
-								</a>
+								<a className='nav-connection' href='tel:79994316266'><span style={{color:"white"}}>По вопросам: </span> +7 (999) 431-62-66</a>
+								<a className='nav-connection' href='tel:79994316266'><span style={{color:"white"}}>3д Печать:</span> +7 (950) 594-02-80</a>
+								
 							</div>
 						</div>
 					</div>
