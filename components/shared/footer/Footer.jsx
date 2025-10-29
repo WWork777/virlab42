@@ -271,7 +271,7 @@ function Footer() {
 									pavel-sakne@yandex.ru
 								</a>
 								<a className='nav-connection' href='tel:79994316266'><span style={{color:"white"}}>По вопросам: </span> +7 (999) 431-62-66</a>
-								<a className='nav-connection' href='tel:79994316266'><span style={{color:"white"}}>3д Печать:</span> +7 (950) 594-02-80</a>
+								<a className='nav-connection' href='tel:79505940280'><span style={{color:"white"}}>3д Печать:</span> +7 (950) 594-02-80</a>
 								
 							</div>
 						</div>
