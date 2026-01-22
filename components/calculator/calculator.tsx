@@ -649,7 +649,7 @@ export default function Calculator() {
   return (
     <div className={styles.root}>
 
-    <h2 className=' text-6xl text-center py-3 mb-2 cormorant-garamond-bold'>
+    <h2 className="text-6xl max-lg:text-[50px] text-center py-3 mb-2 cormorant-garamond-bold">
         РАССЧИТАЙТЕ СТОИМОСТЬ
     </h2>
 

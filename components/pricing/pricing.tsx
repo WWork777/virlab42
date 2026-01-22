@@ -162,7 +162,7 @@ function Pricing() {
           <div className={styles.inner}>
             <div className={styles.topBlock}>
               <div> 
-                <h2 className=' text-6xl text-center py-3 mb-2 cormorant-garamond-bold'>
+                <h2 className="text-6xl max-lg:text-[50px] text-center py-3 mb-2 cormorant-garamond-bold">
                   СТОИМОСТЬ
                 </h2>
 
@@ -195,88 +195,91 @@ function Pricing() {
 
                         <p className={styles.desc}>{value.planDescp}</p>
                       </div>
+                      
+                      <div className={styles.priceBetween}>
+                          <div className={styles.includes}>
+                            <p className={styles.includesTitle}>Что включено:</p>
+                            <ul className={styles.includesList}>
+                              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+                              {value?.planIncludes?.map((v: any, i: any) => (
+                                <li key={i} className={styles.includesItem}>
+                                  <div className={styles.check}>
+                                    <Image
+                                      src={"icons/right-check.svg"}
+                                      alt="right-icon"
+                                      width={20}
+                                      height={20}
+                                    />
+                                  </div>
+                                  <span className={styles.includesText}>{v}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
 
-                      <div className={styles.includes}>
-                        <p className={styles.includesTitle}>Что включено:</p>
-                        <ul className={styles.includesList}>
-                          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                          {value?.planIncludes?.map((v: any, i: any) => (
-                            <li key={i} className={styles.includesItem}>
-                              <div className={styles.check}>
-                                <Image
-                                  src={"icons/right-check.svg"}
-                                  alt="right-icon"
-                                  width={20}
-                                  height={20}
-                                />
-                              </div>
-                              <span className={styles.includesText}>{v}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <div>
-                        <Link href="https://t.me/Pavelvrl" className={styles.btn}>
-                          <span className={styles.btnText}>Заказать</span>
-                          <div className={styles.btnIconWrap}>
-                            <svg
-                              className={styles.btnIcon}
-                              width="58"
-                              height="58"
-                              viewBox="0 0 58 58"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <g filter="url(#filter0_d_1_873)">
-                                <rect x="3" y="2" width="52" height="52" rx="26" fill="white" />
-                                <path
-                                  d="M24 23H34M34 23V33M34 23L24 33"
-                                  stroke="#1F2A2E"
-                                  strokeWidth="1.5"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                />
-                              </g>
-                              <defs>
-                                <filter
-                                  id="filter0_d_1_873"
-                                  x="0"
-                                  y="0"
+                          <div>
+                            <Link href="https://t.me/Pavelvrl" className={styles.btn}>
+                              <span className={styles.btnText}>Заказать</span>
+                              <div className={styles.btnIconWrap}>
+                                <svg
+                                  className={styles.btnIcon}
                                   width="58"
                                   height="58"
-                                  filterUnits="userSpaceOnUse"
-                                  colorInterpolationFilters="sRGB"
+                                  viewBox="0 0 58 58"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
                                 >
-                                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                                  <feColorMatrix
-                                    in="SourceAlpha"
-                                    type="matrix"
-                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                                    result="hardAlpha"
-                                  />
-                                  <feOffset dy="1" />
-                                  <feGaussianBlur stdDeviation="1.5" />
-                                  <feComposite in2="hardAlpha" operator="out" />
-                                  <feColorMatrix
-                                    type="matrix"
-                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"
-                                  />
-                                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_873" />
-                                  <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_873" result="shape" />
-                                </filter>
-                              </defs>
-                            </svg>
+                                  <g filter="url(#filter0_d_1_873)">
+                                    <rect x="3" y="2" width="52" height="52" rx="26" fill="white" />
+                                    <path
+                                      d="M24 23H34M34 23V33M34 23L24 33"
+                                      stroke="#1F2A2E"
+                                      strokeWidth="1.5"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    />
+                                  </g>
+                                  <defs>
+                                    <filter
+                                      id="filter0_d_1_873"
+                                      x="0"
+                                      y="0"
+                                      width="58"
+                                      height="58"
+                                      filterUnits="userSpaceOnUse"
+                                      colorInterpolationFilters="sRGB"
+                                    >
+                                      <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                                      <feColorMatrix
+                                        in="SourceAlpha"
+                                        type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                        result="hardAlpha"
+                                      />
+                                      <feOffset dy="1" />
+                                      <feGaussianBlur stdDeviation="1.5" />
+                                      <feComposite in2="hardAlpha" operator="out" />
+                                      <feColorMatrix
+                                        type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"
+                                      />
+                                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_873" />
+                                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_873" result="shape" />
+                                    </filter>
+                                  </defs>
+                                </svg>
+                              </div>
+                            </Link>
                           </div>
-                        </Link>
                       </div>
+                      
                     </div>
                   ))}
                 </div>
               </div>  
               
               <div>
-                <h2 className=' text-6xl text-center py-3 mb-2 cormorant-garamond-bold'>
+                <h2 className="text-6xl max-lg:text-[50px] text-center py-3 mb-2 cormorant-garamond-bold">
                   IT - АУТСОРСИНГ
                 </h2>
 
