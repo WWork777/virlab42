@@ -434,6 +434,7 @@ export default function Calculator() {
                 </label>
                 <select
                   value={postsPerWeek}
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   onChange={(e) => setPostsPerWeek(e.target.value as any)}
                   className={styles.select}
                   disabled={!isSmmNeeded}
@@ -450,6 +451,7 @@ export default function Calculator() {
                 <label className={styles.selectLabel}>Количество соцсетей</label>
                 <select
                   value={socialNetworks}
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   onChange={(e) => setSocialNetworks(e.target.value as any)}
                   className={styles.select}
                   disabled={!isSmmNeeded}

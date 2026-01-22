@@ -128,7 +128,9 @@ const IT_OUTSOURCE_JSON = {
 };
 
 function Pricing() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [pricingData, setPricingData] = useState<any>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [itOutSource, setItOutSource] = useState<any>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -165,6 +167,7 @@ function Pricing() {
                 </h2>
 
                 <div className={styles.grid}>
+                  {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                   {pricingData?.data?.map((value: any, index: any) => (
                     <div key={index} className={styles.card}>
                       <div className={styles.cardTop}>
@@ -196,6 +199,7 @@ function Pricing() {
                       <div className={styles.includes}>
                         <p className={styles.includesTitle}>Что включено:</p>
                         <ul className={styles.includesList}>
+                          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                           {value?.planIncludes?.map((v: any, i: any) => (
                             <li key={i} className={styles.includesItem}>
                               <div className={styles.check}>
@@ -279,6 +283,7 @@ function Pricing() {
                 {itOutSource?.data && itOutSource.data.length > 0 && (
                   <div className="slider-container">
                     <Slider {...sliderSettings}>
+                      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                       {itOutSource?.data?.map((value: any, index: any) => (
                         <div key={index} className={styles.slideOuter}>
                           <div className={styles.slideCard}>
@@ -320,6 +325,7 @@ function Pricing() {
                                 )}
 
                                 <ul className={styles.includesList}>
+                                  {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                                   {value?.planIncludes?.map((v: any, i: any) => (
                                     <li key={i} className={styles.includesItem}>
                                       <div className={styles.check}>
