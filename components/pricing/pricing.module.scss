@@ -1,0 +1,367 @@
+.section {
+  position: relative;
+  padding: 80px 0;
+  background: var(--lightgray);
+
+  :global(.dark) & {
+    background: var(--secondary);
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 96px;
+}
+
+.container {
+  /* если у тебя уже есть глобальный .container — можно убрать эти стили */
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.topBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+
+  @media (min-width: 1280px) {
+    gap: 96px;
+  }
+}
+
+.headerRow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+
+  @media (min-width: 1280px) {
+    flex-direction: row;
+  }
+}
+
+.headerBadgeRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+  width: 100%;
+  max-width: 576px;
+
+  @media (min-width: 768px) {
+    gap: 32px;
+  }
+}
+
+.step {
+  background: #968c76;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+
+  :global(.dark) & {
+    color: var(--secondary);
+  }
+}
+
+.line {
+  height: 1px;
+  width: 64px;
+  background: rgba(0, 0, 0, 0.12);
+
+  :global(.dark) & {
+    background: rgba(255, 255, 255, 0.12);
+  }
+}
+
+.sectionBadge {
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.headerTextInner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.h2 {
+  max-width: 768px;
+}
+
+.subText {
+  max-width: 672px;
+  color: rgba(31, 42, 46, 0.7);
+
+  :global(.dark) & {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  gap: 28px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1280px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* CARD */
+.card {
+  background: #fff;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  :global(.dark) & {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  @media (min-width: 640px) {
+    padding: 20px;
+  }
+
+  @media (min-width: 1280px) {
+    padding: 48px;
+  }
+}
+
+.cardTop {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cardTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.planName {
+  font-weight: 500;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--secondary);
+  padding: 4px 12px;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.tagText {
+  color: #fff;
+  font-size: 16px;
+}
+
+.priceBlock {
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.priceRowLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+}
+
+.cancelPrice {
+  color: rgba(31, 42, 46, 0.4);
+
+  :global(.dark) & {
+    color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+.price {
+}
+
+.desc {
+  font-size: 16px;
+  color: rgba(31, 42, 46, 0.7);
+
+  :global(.dark) & {
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+/* INCLUDES */
+.includes {
+  padding-top: 40px;
+  border-top: 1px solid rgba(31, 42, 46, 0.12);
+
+  :global(.dark) & {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+}
+
+.includesTitle {
+  font-size: 16px;
+  padding-bottom: 20px;
+}
+
+.includesList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.includesItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  @media (min-width: 640px) {
+    gap: 16px;
+  }
+}
+
+.check {
+  background: #968c76;
+  width: fit-content;
+  padding: 4px;
+  border-radius: 999px;
+  flex-shrink: 0;
+
+  @media (min-width: 640px) {
+    padding: 6px;
+  }
+}
+
+.includesText {
+  flex: 1;
+}
+
+/* BUTTON */
+.btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: #968c76;
+  border-radius: 999px;
+  transition: 0.3s ease;
+  text-decoration: none;
+
+  &:hover {
+    background: #181f24;
+  }
+}
+
+.btnText {
+  padding: 16px 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--secondary);
+  transition: 0.3s ease;
+}
+
+.btn:hover .btnText {
+  color: #fff;
+}
+
+.btnIconWrap {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  transition: 0.3s ease;
+}
+
+.btn:hover .btnIconWrap {
+  left: 0;
+  right: auto;
+}
+
+.btnIcon {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover .btnIcon {
+  transform: rotate(45deg);
+}
+
+/* SLIDER CARD */
+.slideOuter {
+  padding: 0 8px;
+  height: 100%;
+}
+
+.slideCard {
+  background: #fff;
+  padding: 12px;
+  min-height: 680px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  :global(.dark) & {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  @media (min-width: 640px) {
+    padding: 20px;
+  }
+
+  @media (min-width: 1280px) {
+    padding: 32px;
+  }
+}
+
+.slideContent {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex-grow: 1;
+}
+
+/* PARTNERS */
+.partners {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.partnersTitle {
+  text-align: center;
+  color: var(--secondary);
+
+  :global(.dark) & {
+    color: #fff;
+  }
+}

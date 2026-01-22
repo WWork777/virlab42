@@ -12,6 +12,7 @@
 		"@fortawesome/fontawesome-svg-core": "^6.6.0",
 		"@fortawesome/free-solid-svg-icons": "^6.6.0",
 		"@fortawesome/react-fontawesome": "^0.2.2",
+		"@iconify/react": "^6.0.2",
 		"@pbe/react-yandex-maps": "^1.2.5",
 		"@radix-ui/colors": "^3.0.0",
 		"@radix-ui/react-accordion": "^1.2.1",
@@ -29,8 +30,8 @@
 		"next": "^15.0.5",
 		"react": "18",
 		"react-dom": "18",
-		"react-slick": "^0.30.2",
-		"sass": "1.79.1",
+		"react-slick": "^0.30.3",
+		"sass": "^1.79.1",
 		"sharp": "^0.33.5",
 		"slick-carousel": "^1.8.1",
 		"swiper": "^11.1.14",
@@ -38,6 +39,7 @@
 		"tailwindcss-animate": "^1.0.7"
 	},
 	"devDependencies": {
+		"@builder.io/partytown": "^0.10.3",
 		"@types/node": "^20",
 		"@types/react": "^18",
 		"@types/react-dom": "^18",

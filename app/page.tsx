@@ -6,6 +6,8 @@ import HomeHero from '../components/home/home-hero/home-hero'
 import HomeProjects from '../components/home/home-projects/home-projects'
 import HomeTeam from '../components/home/home-team/home-team'
 import Brands from '../components/shared/brands/brands'
+import Pricing from '@/components/pricing/pricing'
+import Calculator from '@/components/calculator/calculator'
 
 export const metadata: Metadata = {
 	metadataBase: new URL('https://virlab42.ru'),
@@ -34,6 +36,8 @@ export default function HomePage() {
 		<div>
 			<HomeHero />
 			<HomeService />
+			<Pricing/>
+			<Calculator/>
 			<HomeAdvantage />
 			<Brands revers={false} />
 			<HomeAbout />
