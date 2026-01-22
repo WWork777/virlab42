@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import styles from "./Calculator.module.scss";
+import styles from "./calculator.module.scss";
 
 export default function Calculator() {
   // Шаг 1: Тип сайта + сервер
