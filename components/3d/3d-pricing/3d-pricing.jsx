@@ -15,7 +15,7 @@ const Pricing3d = () => {
 					<span
 						className={`${s.logo}  cormorant-garamond-bold hidden md:block`}
 					>
-						VIRLAB
+						ВИРЛАБ
 					</span>
 				</div>
 				<div

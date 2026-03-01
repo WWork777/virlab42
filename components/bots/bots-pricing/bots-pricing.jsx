@@ -15,7 +15,7 @@ const PricingBots = () => {
 					<span
 						className={`${s.logo}  cormorant-garamond-bold hidden md:block`}
 					>
-						VIRLAB
+						ВИРЛАБ
 					</span>
 				</div>
 				<div

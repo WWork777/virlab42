@@ -15,7 +15,7 @@ const Pricing = ({ pricing }) => {
 					<span
 						className={`${s.logo}  cormorant-garamond-bold hidden md:block`}
 					>
-						VIRLAB
+						ВИРЛАБ
 					</span>
 				</div>
 				<h2 className={`${s.subtitle} text-center`}>Выберите категорию</h2>

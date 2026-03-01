@@ -28,7 +28,7 @@ export function Burger() {
         <SheetHeader className="border-b border-accent_color">
           <SheetTitle className="text-accent_color text-2xl">
             <SheetClose asChild>
-              <Link href={"/"}>VIRLAB</Link>
+              <Link href={"/"}>ВИРЛАБ</Link>
             </SheetClose>
           </SheetTitle>
           <SheetDescription className="text-accent_color text-sm pb-1">

@@ -6,7 +6,7 @@ const HomeAdvantage = () => {
 			<Divider />
 			<div>
 				<h2 className=' text-6xl text-center py-3 mb-2 cormorant-garamond-bold'>
-					Почему VIRLAB?
+					Почему ВИРЛАБ?
 				</h2>
 				<ul className='grid grid-cols-1 gap-y-5 sm:grid-cols-2 sm:gap-x-5 lg:grid-cols-6'>
 					<li className='lg:col-start-1 lg:col-end-3'>

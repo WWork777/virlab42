@@ -39,7 +39,7 @@ const CarouselAds = () => {
 			original: item4,
 			thumbnail: item4,
 			alt: 'Image 4',
-			name: 'VIRLAB',
+			name: 'ВИРЛАБ',
 			title: 'SEO+Директ',
 		},
 	])

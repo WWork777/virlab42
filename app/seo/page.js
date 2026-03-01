@@ -1,13 +1,13 @@
 export const metadata = {
 	metadataBase: new URL('https://virlab42.ru'),
-	title: 'VIRLAB | Продвижение',
-	description: 'Телеграм-боты VIRLAB',
+	title: 'ВИРЛАБ | Продвижение',
+	description: 'Телеграм-боты ВИРЛАБ',
 	alternates: {
 		canonical: '/seo',
 	},
 	openGraph: {
 		url: '/seo',
-		title: 'VIRLAB | Продвижение',
+		title: 'ВИРЛАБ | Продвижение',
 		description:
 			'По-настоящему продающие сайты. Разработка. Продвижение. Дизайн. Телеграм-боты. 3D-печать. От концепта готового продукта. Реальный опыт, фокус на сроки и качество. Звоните +7-999-431-62-66 или оставляйте заявку на сайте.',
 		images: {

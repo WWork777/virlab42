@@ -10,7 +10,7 @@ const Header = () => {
       <div className="container  py-3  flex  items-center">
         <Link href={"/"}>
           <h1 className="text-accent_color text-4xl font-[700] cormorant-garamond-bold">
-            VIRLAB
+            ВИРЛАБ
           </h1>
         </Link>
         <div className="header__nav-wpapper ml-auto  flex-col gap-y-4 hidden md:flex ">

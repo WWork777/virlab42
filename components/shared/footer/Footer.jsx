@@ -14,7 +14,7 @@ function Footer() {
 							className='logo'
 						>
 							<div className='logo-text cormorant-garamond-bold text-5xl '>
-								VIRLAB
+								ВИРЛАБ
 							</div>
 							{/* <img src={logo} height={35} alt="logo" /> */}
 						</Link>
@@ -51,7 +51,7 @@ function Footer() {
 									Контакты
 								</Link>
 							</div>
-							<p>© 2024 VIRLAB. Все права защищены.</p>
+							<p>© 2026 ВИРЛАБ. Все права защищены.</p>
 						</div>
 						<div className='nav-container'>
 							<div className='nav-block'>
@@ -154,7 +154,7 @@ function Footer() {
 							className='logo'
 						>
 							<div className='logo-text text-4xl cormorant-garamond-bold'>
-								VIRLAB
+								ВИРЛАБ
 							</div>
 							{/* <img height={35} src={logo} alt="logo" /> */}
 						</Link>
@@ -277,7 +277,7 @@ function Footer() {
 						</div>
 					</div>
 
-					<p className='prava'>© 2024 VIRLAB. Все права защищены.</p>
+					<p className='prava'>© 2024 ВИРЛАБ. Все права защищены.</p>
 				</div>
 
 				{/* МОБИЛКА МОБИЛКА МОБИЛКА МОБИЛКА МОБИЛКА МОБИЛКА МОБИЛКА МОБИЛКА МОБИЛКА МОБИЛКА МОБИЛКА МОБИЛКА МОБИЛКА МОБИЛКА */}

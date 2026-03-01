@@ -15,8 +15,8 @@ const Maps = () => {
 							preset: 'islands#redDotIcon', // использует красный маркер
 						}} 
 						properties={{
-							hintContent: 'VIRLAB', // создаёт всплывающую подсказку с текстом 'VIRLAB'
-							balloonContent: 'VIRLAB' // создаёт контент в баллоне с текстом 'VIRLAB'
+							hintContent: 'ВИРЛАБ', // создаёт всплывающую подсказку с текстом 'ВИРЛАБ'
+							balloonContent: 'ВИРЛАБ' // создаёт контент в баллоне с текстом 'ВИРЛАБ'
 						}}
 					/>
 				</Map>

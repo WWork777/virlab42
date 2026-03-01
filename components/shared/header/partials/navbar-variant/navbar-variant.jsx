@@ -64,7 +64,7 @@ export default function NavbarVariant() {
 											alt='logo'
 										/>
 										<div className='CalloutHeading text-center text-accent_color'>
-											VIRLAB
+											ВИРЛАБ
 										</div>
 										<p className='CalloutText text-center text-accent_color'>
 											По-настоящему работающие сайты
