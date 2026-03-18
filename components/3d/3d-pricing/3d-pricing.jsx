@@ -40,7 +40,7 @@ const Pricing3d = () => {
 								</p>
 								<div className={`${s.top_price}`}>
 									{' '}
-									<b>ОТ 10 рублей/грамм</b>
+									<b>ОТ 8 рублей/грамм</b>
 								</div>
 							</div>
 						</div>

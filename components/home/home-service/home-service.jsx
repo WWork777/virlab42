@@ -9,7 +9,7 @@ const services = [
 	},
 	{
 		title: '3D-печать',
-		price: 'от 10 руб.',
+		price: 'от 300 руб.',
 		backgroundImage: "url('./img/3d.png')",
 		link: '/3d'
 	},
