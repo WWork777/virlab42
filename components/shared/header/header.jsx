@@ -31,7 +31,9 @@ const Header = () => {
             </Link>
             <Link
               className="text-accent_color flex items-center gap-1 text-[14px]"
-              href={"https://t.me/Pavelvrl"}
+              href={
+                "https://max.ru/u/f9LHodD0cOJXGrzpVLDRugOGDp3Xu_r0mAB6UOgBedxOQi5ozS_WPVB33So"
+              }
             >
               <MessageCircle color="#968c76" size={18} />
               Связаться

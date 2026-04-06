@@ -11,7 +11,7 @@ export default function Calculator() {
 
   // Шаг 2: SEO
   const [seoOption, setSeoOption] = useState<"free" | "120" | "240" | "1000">(
-    "free"
+    "free",
   );
 
   // Шаг 3: Реклама
@@ -23,7 +23,7 @@ export default function Calculator() {
   // Шаг 5: SMM (опционально)
   const [isSmmNeeded, setIsSmmNeeded] = useState(true);
   const [postsPerWeek, setPostsPerWeek] = useState<"1" | "2" | "3" | "5" | "7">(
-    "1"
+    "1",
   );
   const [socialNetworks, setSocialNetworks] = useState<"1" | "2" | "3">("2");
   const [shootingsNeeded, setShootingsNeeded] = useState(false);
@@ -256,7 +256,9 @@ export default function Calculator() {
                 />
                 <div>
                   <span className={styles.optionTitle}>Базовый пакет</span>
-                  <span className={styles.optionDesc}>14 дней, 120 запросов</span>
+                  <span className={styles.optionDesc}>
+                    14 дней, 120 запросов
+                  </span>
                   <span className={styles.pricePill}>Бесплатно</span>
                 </div>
               </label>
@@ -337,7 +339,9 @@ export default function Calculator() {
                   className={styles.control}
                 />
                 <div>
-                  <span className={styles.optionTitle}>Первичная настройка</span>
+                  <span className={styles.optionTitle}>
+                    Первичная настройка
+                  </span>
                   <span className={styles.optionDesc}>
                     Запуск рекламы без дальнейшего ведения
                   </span>
@@ -427,7 +431,9 @@ export default function Calculator() {
               </div>
             </label>
 
-            <div className={`${styles.smmBlock} ${!isSmmNeeded ? styles.smmDisabled : ""}`}>
+            <div
+              className={`${styles.smmBlock} ${!isSmmNeeded ? styles.smmDisabled : ""}`}
+            >
               <div>
                 <label className={styles.selectLabel}>
                   Посты в неделю (для 2 соцсетей)
@@ -448,7 +454,9 @@ export default function Calculator() {
               </div>
 
               <div>
-                <label className={styles.selectLabel}>Количество соцсетей</label>
+                <label className={styles.selectLabel}>
+                  Количество соцсетей
+                </label>
                 <select
                   value={socialNetworks}
                   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -520,10 +528,10 @@ export default function Calculator() {
                     {seoOption === "free"
                       ? "Бесплатно"
                       : seoOption === "120"
-                      ? "20 000 ₽"
-                      : seoOption === "240"
-                      ? "25 000 ₽"
-                      : "50 000 ₽"}
+                        ? "20 000 ₽"
+                        : seoOption === "240"
+                          ? "25 000 ₽"
+                          : "50 000 ₽"}
                   </span>
                 </div>
 
@@ -569,7 +577,10 @@ export default function Calculator() {
                 <span className={styles.backBtnText}>Назад</span>
               </button>
 
-              <Link href="https://t.me/Pavelvrl" className={styles.orderBtn}>
+              <Link
+                href="https://max.ru/u/f9LHodD0cOJXGrzpVLDRugOGDp3Xu_r0mAB6UOgBedxOQi5ozS_WPVB33So"
+                className={styles.orderBtn}
+              >
                 <span className={styles.orderBtnText}>Заказать</span>
                 <div className={styles.orderBtnIconWrap}>
                   <svg
@@ -648,10 +659,9 @@ export default function Calculator() {
 
   return (
     <div className={styles.root}>
-
-    <h2 className="text-6xl max-lg:text-[50px] text-center py-3 mb-2 cormorant-garamond-bold">
+      <h2 className="text-6xl max-lg:text-[50px] text-center py-3 mb-2 cormorant-garamond-bold">
         РАССЧИТАЙТЕ СТОИМОСТЬ
-    </h2>
+      </h2>
 
       <div className={styles.card}>
         <div className={styles.dots}>
@@ -679,7 +689,10 @@ export default function Calculator() {
               Назад
             </button>
 
-            <button onClick={nextStep} className={`${styles.navBtn} ${styles.navBtnPrimary}`}>
+            <button
+              onClick={nextStep}
+              className={`${styles.navBtn} ${styles.navBtnPrimary}`}
+            >
               {currentStep === 5 ? "Рассчитать" : "Далее"}
             </button>
           </div>

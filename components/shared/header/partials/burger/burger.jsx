@@ -58,7 +58,9 @@ export function Burger() {
             <SheetClose asChild>
               <Link
                 className="text-accent_color flex items-center gap-1 text-[14px]"
-                href={"https://t.me/Pavelvrl"}
+                href={
+                  "https://max.ru/u/f9LHodD0cOJXGrzpVLDRugOGDp3Xu_r0mAB6UOgBedxOQi5ozS_WPVB33So"
+                }
               >
                 <MessageCircle color="#968c76" size={25} />
                 Связаться
@@ -119,6 +121,16 @@ export function Burger() {
                               href={"/3d"}
                             >
                               3D-печать{" "}
+                            </Link>
+                          </SheetClose>
+                        </NavigationMenu.Item>
+                        <NavigationMenu.Item value="sub2">
+                          <SheetClose asChild>
+                            <Link
+                              className="flex justify-end text-[11px] xs:text-base"
+                              href={"/modeling"}
+                            >
+                              Макетирование{" "}
                             </Link>
                           </SheetClose>
                         </NavigationMenu.Item>
