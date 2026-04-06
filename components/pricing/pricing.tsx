@@ -1,17 +1,32 @@
 "use client";
 
 import Image from "next/image";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 import styles from "./pricing.module.scss";
 
-// ✅ локальные данные (JSON внутри файла)
-const PRICING_JSON = {
+// --- Интерфейсы ---
+interface PricingPlan {
+  planName: string;
+  planPrice: string;
+  cancelPrice?: string;
+  planDescp: string;
+  tag?: string;
+  planIncludes: string[];
+  planIncludesTitle?: string;
+}
+
+interface PricingData {
+  data: PricingPlan[];
+}
+
+// --- Данные ---
+const PRICING_JSON: PricingData = {
   data: [
     {
       planName: "Landing",
@@ -57,19 +72,9 @@ const PRICING_JSON = {
       ],
     },
   ],
-  partnerLogo: [
-    { light: "/images/home/pricing/2.png", dark: "/images/home/pricing/2.png" },
-    { light: "/images/home/pricing/3.png", dark: "/images/home/pricing/3.png" },
-    { light: "/images/home/pricing/4.png", dark: "/images/home/pricing/4.png" },
-    { light: "/images/home/pricing/5.png", dark: "/images/home/pricing/5.png" },
-    { light: "/images/home/pricing/6.png", dark: "/images/home/pricing/6.png" },
-    { light: "/images/home/pricing/7.png", dark: "/images/home/pricing/7.png" },
-    { light: "/images/home/pricing/8.png", dark: "/images/home/pricing/8.png" },
-    { light: "/images/home/pricing/9.png", dark: "/images/home/pricing/9.png" },
-  ],
 };
 
-const IT_OUTSOURCE_JSON = {
+const IT_OUTSOURCE_JSON: PricingData = {
   data: [
     {
       planName: "Тариф БАЗОВЫЙ",
@@ -131,18 +136,12 @@ const IT_OUTSOURCE_JSON = {
   ],
 };
 
-function Pricing() {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [pricingData, setPricingData] = useState<any>(null);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [itOutSource, setItOutSource] = useState<any>(null);
+// --- Основной компонент ---
+export default function Pricing() {
   const [mounted, setMounted] = useState(false);
 
-  // ✅ просто кладём локальный JSON в стейт
   useEffect(() => {
     setMounted(true);
-    setPricingData(PRICING_JSON);
-    setItOutSource(IT_OUTSOURCE_JSON);
   }, []);
 
   const sliderSettings = {
@@ -156,280 +155,320 @@ function Pricing() {
     responsive: [
       {
         breakpoint: 1024,
-        settings: { slidesToShow: 2, slidesToScroll: 1, initialSlide: 0 },
+        settings: { slidesToShow: 2, slidesToScroll: 1 },
       },
       {
         breakpoint: 768,
-        settings: { slidesToShow: 1, slidesToScroll: 1, initialSlide: 2 },
+        settings: { slidesToShow: 1, slidesToScroll: 1 },
       },
     ],
   };
+
+  if (!mounted) return null;
 
   return (
     <section className={styles.section}>
       <div className={styles.wrapper}>
         <div className={styles.container}>
           <div className={styles.inner}>
+            {/* СЕКЦИЯ 1: СТОИМОСТЬ (ГРИД) */}
             <div className={styles.topBlock}>
-              <div>
-                <h2 className="text-6xl max-lg:text-[50px] text-center py-3 mb-2 cormorant-garamond-bold">
-                  СТОИМОСТЬ
-                </h2>
+              <h2 className="text-6xl max-lg:text-[50px] text-center py-3 cormorant-garamond-bold text-black uppercase">
+                Стоимость
+              </h2>
 
-                <div className={styles.grid}>
-                  {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                  {pricingData?.data?.map((value: any, index: any) => (
-                    <div key={index} className={styles.card}>
-                      <div className={styles.cardTop}>
-                        <div className={styles.cardTitleRow}>
-                          <p className={styles.planName}>{value?.planName}</p>
-
-                          {value?.tag && (
-                            <div className={styles.tag}>
-                              <Icon
-                                icon="fluent:fire-20-regular"
-                                width="20"
-                                height="20"
-                                style={{ color: "#fff" }}
-                              />
-                              <span className={styles.tagText}>
-                                {value?.tag}
-                              </span>
-                            </div>
-                          )}
-                        </div>
-
-                        <div className={styles.priceBlock}>
-                          <div className={styles.priceRow}>
-                            {value.cancelPrice && (
-                              <h3 className={styles.cancelPrice}>
-                                <del>{value.cancelPrice}</del>
-                              </h3>
-                            )}
-                            <h3 className={styles.price}>{value.planPrice}</h3>
+              <div className={styles.grid}>
+                {PRICING_JSON.data.map((value: PricingPlan, index: number) => (
+                  <div key={`main-card-${index}`} className={styles.card}>
+                    <div className={styles.cardTop}>
+                      <div className={styles.cardTitleRow}>
+                        <p className={styles.planName}>{value.planName}</p>
+                        {value.tag && (
+                          <div className={styles.tag}>
+                            <Icon
+                              icon="fluent:fire-20-regular"
+                              width="20"
+                              height="20"
+                              style={{ color: "#fff" }}
+                            />
+                            <span className={styles.tagText}>{value.tag}</span>
                           </div>
-                        </div>
-
-                        <p className={styles.desc}>{value.planDescp}</p>
+                        )}
                       </div>
 
-                      <div className={styles.priceBetween}>
-                        <div className={styles.includes}>
-                          <p className={styles.includesTitle}>Что включено:</p>
-                          <ul className={styles.includesList}>
-                            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                            {value?.planIncludes?.map((v: any, i: any) => (
-                              <li key={i} className={styles.includesItem}>
-                                <div className={styles.check}>
-                                  <Image
-                                    src={"icons/right-check.svg"}
-                                    alt="right-icon"
-                                    width={20}
-                                    height={20}
-                                  />
-                                </div>
-                                <span className={styles.includesText}>{v}</span>
-                              </li>
-                            ))}
-                          </ul>
+                      <div className={styles.priceBlock}>
+                        <div className={styles.priceRow}>
+                          {value.cancelPrice && (
+                            <h3 className={styles.cancelPrice}>
+                              <del>{value.cancelPrice}</del>
+                            </h3>
+                          )}
+                          <h3 className={styles.price}>{value.planPrice}</h3>
                         </div>
+                      </div>
+                      <p className={styles.desc}>{value.planDescp}</p>
+                    </div>
 
-                        <div>
-                          <Link
-                            href="https://max.ru/u/f9LHodD0cOJXGrzpVLDRugOGDp3Xu_r0mAB6UOgBedxOQi5ozS_WPVB33So"
-                            className={styles.btn}
-                          >
-                            <span className={styles.btnText}>Заказать</span>
-                            <div className={styles.btnIconWrap}>
-                              <svg
-                                className={styles.btnIcon}
-                                width="58"
-                                height="58"
-                                viewBox="0 0 58 58"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <g filter="url(#filter0_d_1_873)">
-                                  <rect
-                                    x="3"
-                                    y="2"
-                                    width="52"
-                                    height="52"
-                                    rx="26"
-                                    fill="white"
+                    <div className={styles.priceBetween}>
+                      <div className={styles.includes}>
+                        <p className={styles.includesTitle}>Что включено:</p>
+                        <ul className={styles.includesList}>
+                          {value.planIncludes.map((item: string, i: number) => (
+                            <li
+                              key={`inc-${index}-${i}`}
+                              className={styles.includesItem}
+                            >
+                              <div className={styles.check}>
+                                <Image
+                                  src="/icons/right-check.svg"
+                                  alt="check"
+                                  width={20}
+                                  height={20}
+                                />
+                              </div>
+                              <span className={styles.includesText}>
+                                {item}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="mt-auto">
+                        <Link
+                          href="https://max.ru/u/f9LHodD0cOJXGrzpVLDRugOGDp3Xu_r0mAB6UOgBedxOQi5ozS_WPVB33So"
+                          className={styles.btn}
+                        >
+                          <span className={styles.btnText}>Заказать</span>
+                          <div className={styles.btnIconWrap}>
+                            <svg
+                              className={styles.btnIcon}
+                              width="58"
+                              height="58"
+                              viewBox="0 0 58 58"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <g filter="url(#filter0_d_1_873)">
+                                <rect
+                                  x="3"
+                                  y="2"
+                                  width="52"
+                                  height="52"
+                                  rx="26"
+                                  fill="white"
+                                />
+                                <path
+                                  d="M24 23H34M34 23V33M34 23L24 33"
+                                  stroke="#1F2A2E"
+                                  strokeWidth="1.5"
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                />
+                              </g>
+                              <defs>
+                                <filter
+                                  id="filter0_d_1_873"
+                                  x="0"
+                                  y="0"
+                                  width="58"
+                                  height="58"
+                                  filterUnits="userSpaceOnUse"
+                                  colorInterpolationFilters="sRGB"
+                                >
+                                  <feFlood
+                                    floodOpacity="0"
+                                    result="BackgroundImageFix"
                                   />
-                                  <path
-                                    d="M24 23H34M34 23V33M34 23L24 33"
-                                    stroke="#1F2A2E"
-                                    strokeWidth="1.5"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
+                                  <feColorMatrix
+                                    in="SourceAlpha"
+                                    type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                    result="hardAlpha"
                                   />
-                                </g>
-                                <defs>
-                                  <filter
-                                    id="filter0_d_1_873"
-                                    x="0"
-                                    y="0"
-                                    width="58"
-                                    height="58"
-                                    filterUnits="userSpaceOnUse"
-                                    colorInterpolationFilters="sRGB"
-                                  >
-                                    <feFlood
-                                      floodOpacity="0"
-                                      result="BackgroundImageFix"
-                                    />
-                                    <feColorMatrix
-                                      in="SourceAlpha"
-                                      type="matrix"
-                                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                                      result="hardAlpha"
-                                    />
-                                    <feOffset dy="1" />
-                                    <feGaussianBlur stdDeviation="1.5" />
-                                    <feComposite
-                                      in2="hardAlpha"
-                                      operator="out"
-                                    />
-                                    <feColorMatrix
-                                      type="matrix"
-                                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"
-                                    />
-                                    <feBlend
-                                      mode="normal"
-                                      in2="BackgroundImageFix"
-                                      result="effect1_dropShadow_1_873"
-                                    />
-                                    <feBlend
-                                      mode="normal"
-                                      in="SourceGraphic"
-                                      in2="effect1_dropShadow_1_873"
-                                      result="shape"
-                                    />
-                                  </filter>
-                                </defs>
-                              </svg>
-                            </div>
-                          </Link>
-                        </div>
+                                  <feOffset dy="1" />
+                                  <feGaussianBlur stdDeviation="1.5" />
+                                  <feComposite in2="hardAlpha" operator="out" />
+                                  <feColorMatrix
+                                    type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"
+                                  />
+                                  <feBlend
+                                    mode="normal"
+                                    in2="BackgroundImageFix"
+                                    result="effect1_dropShadow_1_873"
+                                  />
+                                  <feBlend
+                                    mode="normal"
+                                    in="SourceGraphic"
+                                    in2="effect1_dropShadow_1_873"
+                                    result="shape"
+                                  />
+                                </filter>
+                              </defs>
+                            </svg>
+                          </div>
+                        </Link>
                       </div>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
+            </div>
 
-              <div>
-                <h2 className="text-6xl max-lg:text-[50px] text-center py-3 mb-2 cormorant-garamond-bold">
-                  IT - АУТСОРСИНГ
-                </h2>
+            {/* СЕКЦИЯ 2: IT-АУТСОРСИНГ (СЛАЙДЕР) */}
+            <div className="mt-20">
+              <h2 className="text-6xl max-lg:text-[50px] text-center py-3 mb-10 cormorant-garamond-bold text-black uppercase">
+                IT - Аутсорсинг
+              </h2>
 
-                {itOutSource?.data && itOutSource.data.length > 0 && (
-                  <div className="slider-container">
-                    <Slider {...sliderSettings}>
-                      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                      {itOutSource?.data?.map((value: any, index: any) => (
-                        <div key={index} className={styles.slideOuter}>
-                          <div className={styles.slideCard}>
-                            <div className={styles.slideContent}>
-                              <div className={styles.cardTop}>
-                                <div className={styles.cardTitleRow}>
-                                  <p className={styles.planName}>
-                                    {value?.planName}
-                                  </p>
-                                  {value?.tag && (
-                                    <div className={styles.tag}>
-                                      <Icon
-                                        icon="fluent:fire-20-regular"
-                                        width="20"
-                                        height="20"
-                                        style={{ color: "#fff" }}
-                                      />
-                                      <span className={styles.tagText}>
-                                        {value?.tag}
-                                      </span>
-                                    </div>
-                                  )}
-                                </div>
-
-                                <div className={styles.priceBlock}>
-                                  <div className={styles.priceRowLeft}>
-                                    {value.cancelPrice && (
-                                      <h3 className={styles.cancelPrice}>
-                                        <del>{value.cancelPrice}</del>
-                                      </h3>
-                                    )}
-                                    <h3 className={styles.price}>
-                                      {value.planPrice}
+              <div className="slider-container">
+                <Slider {...sliderSettings}>
+                  {IT_OUTSOURCE_JSON.data.map(
+                    (value: PricingPlan, index: number) => (
+                      <div
+                        key={`outsource-card-${index}`}
+                        className={styles.slideOuter}
+                      >
+                        <div className={styles.slideCard}>
+                          <div className={styles.slideContent}>
+                            <div className={styles.cardTop}>
+                              <p className={styles.planName}>
+                                {value.planName}
+                              </p>
+                              <div className={styles.priceBlock}>
+                                <div className={styles.priceRowLeft}>
+                                  {value.cancelPrice && (
+                                    <h3 className={styles.cancelPrice}>
+                                      <del>{value.cancelPrice}</del>
                                     </h3>
-                                  </div>
-                                </div>
-
-                                <p className={styles.desc}>{value.planDescp}</p>
-                              </div>
-
-                              <div className={styles.includes}>
-                                <p className={styles.includesTitle}>
-                                  Что включено:
-                                </p>
-                                {value?.planIncludesTitle && (
-                                  <p className={styles.includesTitle}>
-                                    {value.planIncludesTitle}
-                                  </p>
-                                )}
-
-                                <ul className={styles.includesList}>
-                                  {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                                  {value?.planIncludes?.map(
-                                    (v: any, i: any) => (
-                                      <li
-                                        key={i}
-                                        className={styles.includesItem}
-                                      >
-                                        <div className={styles.check}>
-                                          <Image
-                                            src={"icons/right-check.svg"}
-                                            alt="right-icon"
-                                            width={20}
-                                            height={20}
-                                          />
-                                        </div>
-                                        <span className={styles.includesText}>
-                                          {v}
-                                        </span>
-                                      </li>
-                                    ),
                                   )}
-                                </ul>
+                                  <h3 className={styles.price}>
+                                    {value.planPrice}
+                                  </h3>
+                                </div>
                               </div>
+                              <p className={styles.desc}>{value.planDescp}</p>
                             </div>
 
-                            <div>
-                              <Link
-                                href="https://max.ru/u/f9LHodD0cOJXGrzpVLDRugOGDp3Xu_r0mAB6UOgBedxOQi5ozS_WPVB33So"
-                                className={styles.btn}
-                              >
-                                <span className={styles.btnText}>Заказать</span>
-                                <div className={styles.btnIconWrap}>
-                                  <svg
-                                    className={styles.btnIcon}
-                                    width="58"
-                                    height="58"
-                                    viewBox="0 0 58 58"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    {/* SVG остается без изменений */}
-                                  </svg>
-                                </div>
-                              </Link>
+                            <div className={styles.includes}>
+                              <p className={styles.includesTitle}>
+                                Что включено:
+                              </p>
+                              {value.planIncludesTitle && (
+                                <p className="text-sm font-bold text-gray-300 mb-2">
+                                  {value.planIncludesTitle}
+                                </p>
+                              )}
+                              <ul className={styles.includesList}>
+                                {value.planIncludes.map(
+                                  (item: string, i: number) => (
+                                    <li
+                                      key={`inc-out-${index}-${i}`}
+                                      className={styles.includesItem}
+                                    >
+                                      <div className={styles.check}>
+                                        <Image
+                                          src="/icons/right-check.svg"
+                                          alt="check"
+                                          width={20}
+                                          height={20}
+                                        />
+                                      </div>
+                                      <span className={styles.includesText}>
+                                        {item}
+                                      </span>
+                                    </li>
+                                  ),
+                                )}
+                              </ul>
                             </div>
                           </div>
+
+                          <div className="p-6 pt-0 mt-auto">
+                            <Link
+                              href="https://max.ru/u/f9LHodD0cOJXGrzpVLDRugOGDp3Xu_r0mAB6UOgBedxOQi5ozS_WPVB33So"
+                              className={styles.btn}
+                            >
+                              <span className={styles.btnText}>Заказать</span>
+                              <div className={styles.btnIconWrap}>
+                                <svg
+                                  className={styles.btnIcon}
+                                  width="58"
+                                  height="58"
+                                  viewBox="0 0 58 58"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <g filter="url(#filter-outsource)">
+                                    <rect
+                                      x="3"
+                                      y="2"
+                                      width="52"
+                                      height="52"
+                                      rx="26"
+                                      fill="white"
+                                    />
+                                    <path
+                                      d="M24 23H34M34 23V33M34 23L24 33"
+                                      stroke="#1F2A2E"
+                                      strokeWidth="1.5"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    />
+                                  </g>
+                                  <defs>
+                                    <filter
+                                      id="filter-outsource"
+                                      x="0"
+                                      y="0"
+                                      width="58"
+                                      height="58"
+                                      filterUnits="userSpaceOnUse"
+                                      colorInterpolationFilters="sRGB"
+                                    >
+                                      <feFlood
+                                        floodOpacity="0"
+                                        result="BackgroundImageFix"
+                                      />
+                                      <feColorMatrix
+                                        in="SourceAlpha"
+                                        type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                        result="hardAlpha"
+                                      />
+                                      <feOffset dy="1" />
+                                      <feGaussianBlur stdDeviation="1.5" />
+                                      <feComposite
+                                        in2="hardAlpha"
+                                        operator="out"
+                                      />
+                                      <feColorMatrix
+                                        type="matrix"
+                                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"
+                                      />
+                                      <feBlend
+                                        mode="normal"
+                                        in2="BackgroundImageFix"
+                                        result="effect1_dropShadow_1"
+                                      />
+                                      <feBlend
+                                        mode="normal"
+                                        in="SourceGraphic"
+                                        in2="effect1_dropShadow_1"
+                                        result="shape"
+                                      />
+                                    </filter>
+                                  </defs>
+                                </svg>
+                              </div>
+                            </Link>
+                          </div>
                         </div>
-                      ))}
-                    </Slider>
-                  </div>
-                )}
+                      </div>
+                    ),
+                  )}
+                </Slider>
               </div>
             </div>
           </div>
@@ -438,5 +477,3 @@ function Pricing() {
     </section>
   );
 }
-
-export default Pricing;
