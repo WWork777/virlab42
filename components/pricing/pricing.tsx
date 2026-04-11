@@ -78,7 +78,7 @@ const IT_OUTSOURCE_JSON: PricingData = {
   data: [
     {
       planName: "Тариф БАЗОВЫЙ",
-      planPrice: "9 990₽",
+      planPrice: "9 990₽ / месяц",
       cancelPrice: "19 990₽",
       planDescp: "Для тех, кому нужно просто «чтобы работало»",
       planIncludes: [
@@ -92,7 +92,7 @@ const IT_OUTSOURCE_JSON: PricingData = {
     {
       planName: "Тариф СТАНДАРТ",
       planIncludesTitle: "Все из Базового +",
-      planPrice: "19 990₽",
+      planPrice: "19 990₽ / месяц",
       cancelPrice: "29 990₽",
       planDescp: "Для растущих проектов",
       planIncludes: [
@@ -103,7 +103,7 @@ const IT_OUTSOURCE_JSON: PricingData = {
     },
     {
       planName: "Тариф ПРОДВИЖЕНИЕ",
-      planPrice: "39 990₽",
+      planPrice: "39 990₽ / месяц",
       cancelPrice: "49 990₽",
       planIncludesTitle: "Все из Базового и Стандарта +",
       planDescp: "Для лидеров рынка",

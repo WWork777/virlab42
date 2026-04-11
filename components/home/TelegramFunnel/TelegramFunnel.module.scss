@@ -1,0 +1,147 @@
+.funnelSection {
+  padding: 60px 0;
+  font-family: var(--font-cormorant), serif;
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .banner {
+    background: var(--grey-blue-dark); // Глубокий черный
+    color: #fff;
+    border-radius: 4px; // Можно убрать (0), если у вас на сайте острые углы
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+
+    // Декоративный блик на фоне для стиля
+    &::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(
+        circle,
+        rgba(42, 171, 238, 0.15) 0%,
+        rgba(0, 0, 0, 0) 70%
+      );
+      border-radius: 50%;
+      pointer-events: none;
+    }
+  }
+
+  .content {
+    flex: 1;
+    max-width: 650px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .title {
+    font-size: clamp(32px, 5vw, 55px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .description {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 40px;
+    font-family:
+      system-ui,
+      -apple-system,
+      sans-serif; // Читаемый шрифт для описания
+    font-weight: 300;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 40px;
+    background-color: #fff;
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid #fff;
+    font-family: inherit;
+    transition: all 0.3s ease;
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+      transition: fill 0.3s ease;
+    }
+
+    &:hover {
+      background-color: #2aabee; // Фирменный цвет Telegram
+      border-color: #2aabee;
+      color: #fff;
+    }
+  }
+
+  .imageSide {
+    flex: 0 0 auto;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .graphic {
+      width: 150px;
+      height: 150px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+
+      .tgBigIcon {
+        font-size: 60px;
+        color: #fff;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  // Адаптивность для мобильных устройств
+  @media (max-width: 992px) {
+    .banner {
+      flex-direction: column;
+      padding: 40px 30px;
+      text-align: center;
+    }
+
+    .imageSide {
+      display: none; // Скрываем графику на мобилках для экономии места
+    }
+
+    .title {
+      font-size: 32px;
+    }
+
+    .description {
+      font-size: 18px;
+    }
+
+    .button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
