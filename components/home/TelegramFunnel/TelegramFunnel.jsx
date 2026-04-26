@@ -4,7 +4,7 @@ import styles from "./TelegramFunnel.module.scss";
 
 const TelegramFunnel = () => {
   // Укажите здесь ссылку на ваш Telegram-канал
-  const telegramLink = "https://t.me/sakneru";
+  const telegramLink = "https://t.me/virlab";
 
   return (
     <section className={styles.funnelSection}>
